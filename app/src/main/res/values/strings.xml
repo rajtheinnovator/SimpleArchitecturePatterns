@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ArchitecturePatterns</string>
+    <string name="mvp_example">MVP Example</string>
 </resources>
