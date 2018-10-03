@@ -1,17 +1,19 @@
 package com.enpassio.architecturepatterns.mvp
 
+import android.content.res.Resources
 import android.os.Handler
+import com.enpassio.architecturepatterns.R
 import java.util.*
 
 
 class GetQuoteInteractorImpl : GetQuoteInteractor {
 
     private val arrayList = Arrays.asList(
-            "Be yourself. everyone else is already taken.",
-            "A room without books is like a body without a soul.",
-            "You only live once, but if you do it right, once is enough.",
-            "Be the change that you wish to see in the world.",
-            "If you tell the truth, you don't have to remember anything."
+            Resources.getSystem().getString(R.string.quote_be_yourself),
+            Resources.getSystem().getString(R.string.quote_room_without_book),
+            Resources.getSystem().getString(R.string.quote_you_only_live_once),
+            Resources.getSystem().getString(R.string.quote_be_the_change),
+            Resources.getSystem().getString(R.string.quote_if_you_tell_the_truth)
     )
 
     private val randomString: String

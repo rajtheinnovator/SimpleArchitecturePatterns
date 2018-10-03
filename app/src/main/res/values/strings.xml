@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">ArchitecturePatterns</string>
+    <!--string resources for MVP code-->
     <string name="mvp_example">MVP Example</string>
+    <string name="quote_be_yourself">Be yourself. Everyone else is already taken.</string>
+    <string name="quote_room_without_book">A room without books is like a body without a soul.</string>
+    <string name="quote_you_only_live_once">You only live once, but if you do it right, once is enough.</string>
+    <string name="quote_be_the_change">Be the change that you wish to see in the world.</string>
+    <string name="quote_if_you_tell_the_truth">If you tell the truth, you don\'t have to remember anything.</string>
+    <!--string resources for next architecture pattern implementation -->
 </resources>
