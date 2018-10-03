@@ -15,7 +15,7 @@ class MvpPatternActivity : AppCompatActivity(), MainView {
     lateinit var textView: TextView
     lateinit var button: Button
     lateinit var progressBar: ProgressBar
-    internal var presenter: MainPresenter? = null
+    internal var presenter: Presenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

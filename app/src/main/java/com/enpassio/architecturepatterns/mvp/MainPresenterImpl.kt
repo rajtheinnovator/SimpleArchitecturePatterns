@@ -1,6 +1,6 @@
 package com.enpassio.architecturepatterns.mvp
 
-class MainPresenterImpl(private var mainView: MainView?, private val getQuoteInteractor: GetQuoteInteractor) : MainPresenter, GetQuoteInteractor.OnFinishedListener {
+class MainPresenterImpl(private var mainView: MainView?, private val getQuoteInteractor: GetQuoteInteractor) : Presenter, GetQuoteInteractor.OnFinishedListener {
 
     override fun onButtonClick() {
         if (mainView != null) {
