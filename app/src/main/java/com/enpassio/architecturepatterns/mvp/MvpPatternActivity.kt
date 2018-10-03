@@ -1,7 +1,8 @@
-package com.enpassio.architecturepatterns
+package com.enpassio.architecturepatterns.mvp
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.enpassio.architecturepatterns.R
 
 class MvpPatternActivity : AppCompatActivity() {
 
