@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".mvp.MvpPatternActivity" />
-        <activity android:name=".mvpwithoutrxanddagger.MvpWithoutRxAndDagger"></activity>
+        <activity
+            android:name=".mvpwithoutrxanddagger.view.MvpWithoutRxAndDaggerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
