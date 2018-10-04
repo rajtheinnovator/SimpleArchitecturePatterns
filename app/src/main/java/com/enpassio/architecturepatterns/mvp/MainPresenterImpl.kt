@@ -1,5 +1,6 @@
 package com.enpassio.architecturepatterns.mvp
 
+//presenter
 class MainPresenterImpl(private var mainView: MainView?, private val getQuoteInteractor: GetQuoteInteractor) : Presenter, GetQuoteInteractor.OnFinishedListener {
 
     override fun onButtonClick() {

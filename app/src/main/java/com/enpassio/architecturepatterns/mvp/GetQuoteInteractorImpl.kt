@@ -3,6 +3,7 @@ package com.enpassio.architecturepatterns.mvp
 import android.os.Handler
 import java.util.*
 
+//model
 class GetQuoteInteractorImpl : GetQuoteInteractor {
 
     private val arrayList = Arrays.asList(
