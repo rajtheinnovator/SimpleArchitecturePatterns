@@ -1,4 +1,4 @@
-package com.enpassio.architecturepatterns.mvp
+package com.enpassio.architecturepatterns.mvpfromjournaldev
 
 import android.os.Handler
 import java.util.*

@@ -1,4 +1,4 @@
-package com.enpassio.architecturepatterns.mvp
+package com.enpassio.architecturepatterns.mvpfromjournaldev
 
 //presenter
 class MainPresenterImpl(private var mainView: MainView?, private val getQuoteInteractor: GetQuoteInteractor) : Presenter, GetQuoteInteractor.OnFinishedListener {

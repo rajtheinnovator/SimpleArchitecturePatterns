@@ -1,4 +1,4 @@
-package com.enpassio.architecturepatterns.mvp
+package com.enpassio.architecturepatterns.mvpfromjournaldev
 
 
 interface GetQuoteInteractor {
