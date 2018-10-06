@@ -3,7 +3,7 @@ package com.enpassio.architecturepatterns.mvpExample
 /**
  * Created by Greta Grigutė on 2018-10-06.
  */
-class MainPresenterImpl(private var mainView: MainView?, private val getQuoteInteractor: GetQuoteInteractor) : MainPresenter, GetQuoteInteractor.OnFinishedListener {
+class MainPresenterImpl(private var mainView: MainContract.MainView?, private val getQuoteInteractor: MainContract.GetQuoteInteractor) : MainContract.Presenter, MainContract.GetQuoteInteractor.OnFinishedListener {
 
     override fun onButtonClick() {
         if (mainView != null) {

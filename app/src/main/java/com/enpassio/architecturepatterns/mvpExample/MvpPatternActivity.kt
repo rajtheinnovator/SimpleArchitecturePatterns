@@ -8,9 +8,9 @@ import kotlinx.android.synthetic.main.mvp_pattern_activity.*
 
 //example of MVP pattern from: https://www.journaldev.com/14886/android-mvp
 
-class MvpPatternActivity : AppCompatActivity(), MainView {
+class MvpPatternActivity : AppCompatActivity(), MainContract.MainView {
 
-    internal var presenter: MainPresenter? = null
+    internal var presenter: MainContract.Presenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -9,7 +9,7 @@ import android.os.Handler
 import java.util.Arrays
 import java.util.Random
 
-class GetQuoteInteractorImpl : GetQuoteInteractor {
+class GetQuoteInteractorImpl : MainContract.GetQuoteInteractor {
 
     private val arrayList = Arrays.asList(
             "Be yourself. everyone else is already taken.",
@@ -28,7 +28,7 @@ class GetQuoteInteractorImpl : GetQuoteInteractor {
             return arrayList[index]
         }
 
-    override fun getNextQuote(listener: GetQuoteInteractor.OnFinishedListener) {
+    override fun getNextQuote(listener: MainContract.GetQuoteInteractor.OnFinishedListener) {
         Handler().postDelayed({ listener.onFinished(randomString) }, 1200)
     }
 }
