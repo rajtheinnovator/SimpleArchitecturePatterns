@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">ArchitecturePatterns</string>
     <string name="mvp_example">MVP Example</string>
+    <string name="email">Email</string>
+    <string name="user_name">User Name</string>
+    <string name="basic_mvp_example">Basic MVP example</string>
+    <string name="will_appear_here">Your name and email will appear here.</string>
 </resources>
