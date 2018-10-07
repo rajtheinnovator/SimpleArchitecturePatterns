@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mvp.MvpPatternActivity" />
+        <activity android:name=".mvpExample.MvpPatternActivity" />
         <activity
             android:name=".mvpwithoutrxanddagger.view.MvpWithoutRxAndDaggerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
