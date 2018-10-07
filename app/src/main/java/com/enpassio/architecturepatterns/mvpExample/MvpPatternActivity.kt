@@ -1,4 +1,4 @@
-package com.enpassio.architecturepatterns.mvp
+package com.enpassio.architecturepatterns.mvpExample
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
