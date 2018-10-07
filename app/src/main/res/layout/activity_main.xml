@@ -30,4 +30,16 @@
         android:textAllCaps="false"
         android:textSize="16sp" />
 
+    <Button
+        android:id="@+id/button_mvvm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:background="@null"
+        android:padding="8dp"
+        android:text="@string/mvvm_example"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
+
 </LinearLayout>
