@@ -23,7 +23,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"
         android:background="@null"
         android:padding="8dp"
         android:text="@string/mvp_without_rx_and_dagger_example"
@@ -35,11 +34,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"
         android:background="@null"
         android:padding="8dp"
         android:text="@string/mvvm_example"
         android:textAllCaps="false"
         android:textSize="16sp" />
 
+    <Button
+        android:id="@+id/button_mvp_finished"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@null"
+        android:padding="8dp"
+        android:text="@string/mvp_finished_example"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
 </LinearLayout>

@@ -15,3 +15,4 @@ ______________________________________________________________
 
 * https://www.journaldev.com/14886/android-mvp
 * https://medium.com/cr8resume/make-you-hand-dirty-with-mvp-model-view-presenter-eab5b5c16e42
+* https://android.jlelse.eu/avenging-android-mvp-23461aebe9b5
