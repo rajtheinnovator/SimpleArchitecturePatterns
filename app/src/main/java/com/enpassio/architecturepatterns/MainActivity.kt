@@ -7,6 +7,7 @@ import com.enpassio.architecturepatterns.mvpExample.MvpPatternActivity
 import com.enpassio.architecturepatterns.mvpfinishedwithoutrxanddagger.MvpFinishedWithoutRxAndDaggerActivity
 import com.enpassio.architecturepatterns.mvpwithoutrxanddagger.view.MvpWithoutRxAndDaggerActivity
 import com.enpassio.architecturepatterns.mvvmExample.MvvmActivity
+import com.enpassio.architecturepatterns.mvvmjournaldevexamplebyabhishek.views.MvvmJournaldevExampleByAbhishekActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +19,11 @@ class MainActivity : AppCompatActivity() {
         button_mvp_without_rx_and_dagger.setOnClickListener { startMvpWithoutRxDaggerActivity() }
         button_mvvm.setOnClickListener { startMvvmActivity() }
         button_mvp_finished.setOnClickListener { startMvpFinishedWithoutRxDaggerActivity() }
+        button_mvvm_journaldev_abhishek.setOnClickListener { startMvvmJournaldevExampleByAbhisheActivity() }
+    }
+
+    private fun startMvvmJournaldevExampleByAbhisheActivity() {
+        startActivity(Intent(this@MainActivity, MvvmJournaldevExampleByAbhishekActivity::class.java))
     }
 
     private fun startMvpFinishedWithoutRxDaggerActivity() {
