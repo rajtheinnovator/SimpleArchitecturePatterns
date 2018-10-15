@@ -23,10 +23,13 @@ class MvvmJournaldevExampleByAbhishekActivity : AppCompatActivity() {
 
     }
 
-    @BindingAdapter("bind:toastMessage")
-    fun runMe(view: View, message: String?) {
-        if (message != null)
-            Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show()
+    object DataBindingAdapter {
+        @BindingAdapter("toastMessage")
+        @JvmStatic
+        fun runMe(view: View, message: String?) {
+            if (message != null)
+                Toast.makeText(view.context, message, Toast.LENGTH_SHORT).show()
+        }
     }
 }
 
