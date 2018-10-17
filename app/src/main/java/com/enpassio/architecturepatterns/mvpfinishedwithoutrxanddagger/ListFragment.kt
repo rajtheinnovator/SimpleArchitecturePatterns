@@ -25,21 +25,68 @@ import com.enpassio.core.ui.list.ListPresenter
 
 class ListFragment : Fragment(), ListContract.ListView, ListAdapter.InteractionListener, SwipeRefreshLayout.OnRefreshListener {
 
-    override fun showCharacters(characterList: List<CharacterMarvel>) {}
+    override fun showCharacters(characterList: List<CharacterMarvel>) {
+        if (mListCharacterAdapter?.viewType !== ListAdapter.VIEW_TYPE_GALLERY) {
+            mListCharacterAdapter?.removeAll()
+            mListCharacterAdapter?.viewType = (ListAdapter.VIEW_TYPE_GALLERY)
+        }
 
-    override fun showSearchedCharacters(characterList: List<CharacterMarvel>) {}
+        if (!(mSwipeRefreshLayout?.isActivated()!!)) {
+            mSwipeRefreshLayout?.setEnabled(true)
+        }
+        mListCharacterAdapter?.addItems(characterList)
+    }
 
-    override fun showProgress() {}
+    override fun showSearchedCharacters(searchResults: List<CharacterMarvel>) {
+        if (mListCharacterAdapter?.viewType !== ListAdapter.VIEW_TYPE_LIST) {
+            mListCharacterAdapter?.removeAll()
+            mListCharacterAdapter?.viewType = (ListAdapter.VIEW_TYPE_LIST)
 
-    override fun hideProgress() {}
+        }
+        if (mSwipeRefreshLayout?.isActivated()!!) {
+            mSwipeRefreshLayout?.setEnabled(false)
+        }
+        mListCharacterAdapter?.addItems(searchResults)
+    }
 
-    override fun showUnauthorizedError() {}
+    override fun showProgress() {
+        if (mListCharacterAdapter?.isEmpty!! && !(mSwipeRefreshLayout?.isRefreshing()!!)) {
+            mContentLoadingProgress?.setVisibility(View.VISIBLE)
+        }
+    }
 
-    override fun showEmpty() {}
+    override fun hideProgress() {
+        mSwipeRefreshLayout?.setRefreshing(false)
+        mContentLoadingProgress?.setVisibility(View.GONE)
+        mListCharacterAdapter?.removeLoadingView()
+    }
 
-    override fun showError(errorMessage: String) {}
+    override fun showUnauthorizedError() {
+        mMessageImage?.setImageResource(R.drawable.ic_error_list)
+        mMessageText?.setText(getString(R.string.error_generic_server_error, "Unauthorized"))
+        mMessageButton?.setText(getString(R.string.action_try_again))
+        showMessageLayout(true)
+    }
 
-    override fun showMessageLayout(show: Boolean) {}
+    override fun showError(errorMessage: String) {
+        mMessageImage?.setImageResource(R.drawable.ic_error_list)
+        mMessageText?.setText(getString(R.string.error_generic_server_error, errorMessage))
+        mMessageButton?.setText(getString(R.string.action_try_again))
+        showMessageLayout(true)
+    }
+
+    override fun showEmpty() {
+        mMessageImage?.setImageResource(R.drawable.ic_clear)
+        mMessageText?.setText(getString(R.string.error_no_items_to_display))
+        mMessageButton?.setText(getString(R.string.action_check_again))
+        showMessageLayout(true)
+    }
+
+    override fun showMessageLayout(show: Boolean) {
+        mMessageLayout?.setVisibility(if (show) View.VISIBLE else View.GONE)
+        mCharactersRecycler?.setVisibility(if (show) View.GONE else View.VISIBLE)
+    }
+
 
     override fun onListClick(character: CharacterMarvel, sharedElementView: View, adapterPosition: Int) {
         //start detail activity to show character details

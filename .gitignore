@@ -16,3 +16,5 @@ core/libs/
 core/src/main/res/drawable/
 hs_err_pid4004.log
 replay_pid4004.log
+core/src/main/java/com/enpassio/core/ui/character/
+gradle.properties
