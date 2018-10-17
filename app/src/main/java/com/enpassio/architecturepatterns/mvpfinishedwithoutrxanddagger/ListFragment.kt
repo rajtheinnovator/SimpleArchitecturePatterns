@@ -15,9 +15,29 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import com.enpassio.architecturepatterns.R
+import com.enpassio.core.data.DataManager
+import com.enpassio.core.data.model.CharacterMarvel
+import com.enpassio.core.ui.list.ListContract
+import com.enpassio.core.ui.list.ListPresenter
 
 
 class ListFragment : Fragment(), ListContract.ListView, ListAdapter.InteractionListener, SwipeRefreshLayout.OnRefreshListener {
+    override fun showCharacters(characterList: List<CharacterMarvel>) {}
+
+    override fun showSearchedCharacters(characterList: List<CharacterMarvel>) {}
+
+    override fun showProgress() {}
+
+    override fun hideProgress() {}
+
+    override fun showUnauthorizedError() {}
+
+    override fun showEmpty() {}
+
+    override fun showError(errorMessage: String) {}
+
+    override fun showMessageLayout(show: Boolean) {}
 
     override fun onListClick(character: CharacterMarvel, sharedElementView: View, adapterPosition: Int) {
         //start detail activity to show character details
@@ -41,7 +61,7 @@ class ListFragment : Fragment(), ListContract.ListView, ListAdapter.InteractionL
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
         retainInstance = true
-        mListPresenter = ListPresenter(DataManager.getInstance())
+        mListPresenter = ListPresenter(DataManager.instance)
         mListCharacterAdapter = ListAdapter()
     }
 
@@ -52,7 +72,7 @@ class ListFragment : Fragment(), ListContract.ListView, ListAdapter.InteractionL
         initViews(view)
         mListPresenter!!.attachView(this)
         mListCharacterAdapter!!.setListInteractionListener(this)
-        if (mListCharacterAdapter!!.isEmpty()) {
+        if (mListCharacterAdapter?.isEmpty!!) {
             mListPresenter!!.onInitialListRequested()
         }
         return view

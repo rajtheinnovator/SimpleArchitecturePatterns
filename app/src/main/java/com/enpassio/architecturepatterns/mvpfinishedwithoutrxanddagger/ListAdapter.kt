@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.enpassio.architecturepatterns.R
+import com.enpassio.core.data.model.CharacterMarvel
 import com.squareup.picasso.Picasso
 import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
@@ -46,7 +47,7 @@ class ListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun getItemId(position: Int): Long {
-        return (if (mCharacterList.size >= position) mCharacterList[position].getId() else -1).toLong()
+        return (if (mCharacterList.size >= position) mCharacterList[position].id else -1).toLong()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -78,9 +79,9 @@ class ListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     private fun onBindGenericItemViewHolder(holder: CharacterViewHolder, position: Int) {
-        holder.name.setText(mCharacterList[position].getName())
+        holder.name.setText(mCharacterList[position].name)
 
-        val characterImageUrl = mCharacterList[position].getImageUrl()
+        val characterImageUrl = mCharacterList[position].imageUrl
         if (!TextUtils.isEmpty(characterImageUrl)) {
             Picasso.with(holder.listItem.context)
                     .load(characterImageUrl)
@@ -96,10 +97,10 @@ class ListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     fun add(position: Int?, item: CharacterMarvel?) {
         if (position != null) {
-            mCharacterList.add(position, item)
+            mCharacterList.add(position, item!!)
             notifyItemInserted(position)
         } else {
-            mCharacterList.add(item)
+            mCharacterList.add(item!!)
             notifyItemInserted(mCharacterList.size - 1)
         }
     }

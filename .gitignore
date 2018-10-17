@@ -13,9 +13,6 @@
 .idea/
 app/libs/
 core/libs/
-core/src/main/java/com/enpassio/core/data/model/
-core/src/main/java/com/enpassio/core/data/network/
-core/src/main/java/com/enpassio/core/ui/
 core/src/main/res/drawable/
 hs_err_pid4004.log
 replay_pid4004.log
