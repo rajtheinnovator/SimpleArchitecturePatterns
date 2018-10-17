@@ -11,6 +11,6 @@ public final class BuildConfig {
   public static final int VERSION_CODE = 1;
   public static final String VERSION_NAME = "1.0";
   // Fields from build type: debug
-  public static final String PRIVATE_KEY = "";
-  public static final String PUBLIC_KEY = "";
+  public static final String PRIVATE_KEY = "a2700dcb33f41220b1c8ddf5a03f89f948a60104";
+  public static final String PUBLIC_KEY = "06984696d7cb116106f29ec10e82cc8b";
 }

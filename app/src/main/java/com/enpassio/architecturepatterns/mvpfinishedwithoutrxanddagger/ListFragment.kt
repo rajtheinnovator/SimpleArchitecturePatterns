@@ -8,6 +8,7 @@ import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +24,7 @@ import com.enpassio.core.ui.list.ListPresenter
 
 
 class ListFragment : Fragment(), ListContract.ListView, ListAdapter.InteractionListener, SwipeRefreshLayout.OnRefreshListener {
+
     override fun showCharacters(characterList: List<CharacterMarvel>) {}
 
     override fun showSearchedCharacters(characterList: List<CharacterMarvel>) {}
@@ -69,16 +71,18 @@ class ListFragment : Fragment(), ListContract.ListView, ListAdapter.InteractionL
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.mvp_finished_without_rx_and_dagger_fragment_list, container, false)
 
+        Log.d("my_tag", "onCreateView called")
         initViews(view)
         mListPresenter!!.attachView(this)
         mListCharacterAdapter!!.setListInteractionListener(this)
         if (mListCharacterAdapter?.isEmpty!!) {
-            mListPresenter!!.onInitialListRequested()
+            mListPresenter?.onInitialListRequested()
         }
         return view
     }
 
     private fun initViews(view: View) {
+        Log.d("my_tag", "initViews called")
         mActivity = activity as AppCompatActivity?
         mActivity!!.setSupportActionBar(view.findViewById(R.id.toolbar) as Toolbar)
 
@@ -99,7 +103,7 @@ class ListFragment : Fragment(), ListContract.ListView, ListAdapter.InteractionL
 
     private fun setUpLayoutManager(): RecyclerView.LayoutManager {
         val layoutManager: RecyclerView.LayoutManager
-
+        Log.d("my_tag", "setUpLayoutManager called")
         layoutManager = initGridLayoutManager(TAB_LAYOUT_SPAN_SIZE, TAB_LAYOUT_ITEM_SPAN_SIZE)
         return layoutManager
     }
@@ -118,21 +122,25 @@ class ListFragment : Fragment(), ListContract.ListView, ListAdapter.InteractionL
                 }
             }
         }
+        Log.d("my_tag", "initGridLayoutManager called")
         return gridLayoutManager
     }
 
 
     override fun onRefresh() {
+        Log.d("my_tag", "onRefresh called")
         mListCharacterAdapter!!.removeAll()
         mListPresenter!!.onInitialListRequested()
     }
 
     override fun onDestroyView() {
+        Log.d("my_tag", "onDestroyView called")
         mCharactersRecycler!!.adapter = null
         super.onDestroyView()
     }
 
     override fun onDestroy() {
+        Log.d("my_tag", "onDestroy called")
         mListPresenter!!.detachView()
         super.onDestroy()
     }

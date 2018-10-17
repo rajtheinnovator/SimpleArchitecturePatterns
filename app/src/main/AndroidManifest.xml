@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.enpassio.architecturepatterns">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name="com.enpassio.core.AvengingApplication"
         android:allowBackup="true"
@@ -11,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +27,9 @@
             android:name=".mvpwithoutrxanddagger.view.MvpWithoutRxAndDaggerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".mvvmExample.MvvmActivity" />
-        <activity android:name=".mvpfinishedwithoutrxanddagger.MvpFinishedWithoutRxAndDaggerActivity" />
+        <activity
+            android:name=".mvpfinishedwithoutrxanddagger.MvpFinishedWithoutRxAndDaggerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
