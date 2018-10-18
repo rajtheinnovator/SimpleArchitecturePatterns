@@ -1,5 +1,6 @@
-package com.enpassio.architecturepatterns.mvpfinishedwithoutrxanddagger
+package com.enpassio.architecturepatterns.mvpfinishedwithoutrxanddagger.ui.list
 
+import android.app.ListFragment
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.design.widget.Snackbar
@@ -7,9 +8,11 @@ import android.util.Log
 import android.view.View
 import com.enpassio.architecturepatterns.R
 import com.enpassio.architecturepatterns.mvpfinishedwithoutrxanddagger.ui.base.BaseActivity
-import com.enpassio.architecturepatterns.mvpfinishedwithoutrxanddagger.ui.list.ListFragment
 
-class MvpFinishedWithoutRxAndDaggerActivity : BaseActivity() {
+/**
+ * Created by Greta Grigutė on 2018-10-17.
+ */
+class ListActivity : BaseActivity() {
     var listFragment = ListFragment
     override  fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme) // Branded launch

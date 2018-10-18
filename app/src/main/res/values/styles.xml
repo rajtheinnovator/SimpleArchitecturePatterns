@@ -17,4 +17,13 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="ItemListName" parent="TextAppearance.AppCompat.Light.SearchResult.Subtitle">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="ItemTitleName" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:shadowColor">@color/colorPrimaryDark</item>
+        <item name="android:shadowRadius">3.0</item>
+    </style>
 </resources>

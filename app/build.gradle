@@ -37,4 +37,21 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
     implementation "android.arch.lifecycle:extensions:1.1.1"
     annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+    implementation project(path: ':core')
+    implementation project(path: ':core')
+    implementation "com.android.support:design:$supportLibraryVersion"
+    implementation "com.squareup.picasso:picasso:$picassoVersion"
+    // Instrumentation tests dependencies
+    androidTestImplementation("com.android.support.test:runner:$testRunnerVersion") {
+        exclude module: 'support-annotations'
+    }
+    androidTestImplementation("com.android.support.test.espresso:espresso-core:$espressoVersion") {
+        exclude module: 'support-annotations'
+    }
+    androidTestImplementation("com.android.support.test.espresso:espresso-contrib:$espressoVersion") {
+        exclude module: 'design'
+        exclude module: 'support-v4'
+        exclude module: 'support-annotations'
+        exclude module: 'recyclerview-v7'
+    }
 }

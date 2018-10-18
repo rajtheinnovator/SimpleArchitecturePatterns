@@ -20,8 +20,9 @@
         <activity
             android:name=".mvpwithoutrxanddagger.view.MvpWithoutRxAndDaggerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".mvvmExample.MvvmActivity"></activity>
-        <activity android:name=".mvpfinishedwithoutrxanddagger.MvpFinishedWithoutRxAndDaggerActivity" />
+        <activity android:name=".mvvmExample.MvvmActivity" />
+        <activity android:name=".mvpfinishedwithoutrxanddagger.MvpFinishedWithoutRxAndDaggerActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
