@@ -23,6 +23,8 @@
         <activity android:name=".mvvmExample.MvvmActivity" />
         <activity android:name=".mvpfinishedwithoutrxanddagger.MvpFinishedWithoutRxAndDaggerActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".mvvmjournaldevexamplebyabhishek.views.MvvmJournaldevExampleByAbhishekActivity" />
+
     </application>
 
 </manifest>
