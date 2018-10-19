@@ -11,11 +11,11 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.enpassio.architecturepatterns.R
-import com.example.android.core.data.model.CharacterMarvel
+import com.enpassio.core.data.model.CharacterMarvel
 import com.squareup.picasso.Picasso
 import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
-import java.util.ArrayList
+import java.util.*
 
 /**
  * Created by Greta Grigutė on 2018-10-17.
