@@ -14,7 +14,7 @@ import com.enpassio.core.ui.base.BasePresenter
 class ListPresenter(private val mDataManager: DataManager) : BasePresenter<ListContract.ListView>(), ListContract.ViewActions {
 
     override fun onInitialListRequested() {
-        getCharacters(ITEM_REQUEST_INITIAL_OFFSET, ITEM_REQUEST_LIMIT, null)
+        getCharacters(ITEM_REQUEST_INITIAL_OFFSET, ITEM_REQUEST_LIMIT, "hulk")
     }
 
    override fun onListEndReached(offset: Int?, limit: Int?, searchQuery: String?) {

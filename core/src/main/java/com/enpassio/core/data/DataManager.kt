@@ -1,6 +1,7 @@
 package com.enpassio.core.data
 
 import android.util.Log
+import com.enpassio.core.BuildConfig
 import com.enpassio.core.data.model.CharacterMarvel
 import com.enpassio.core.data.model.DataWrapper
 import com.enpassio.core.data.network.MarvelService

@@ -10,7 +10,9 @@ import com.enpassio.architecturepatterns.mvpfinishedwithoutrxanddagger.ui.base.B
 import com.enpassio.architecturepatterns.mvpfinishedwithoutrxanddagger.ui.list.ListFragment
 
 class MvpFinishedWithoutRxAndDaggerActivity : BaseActivity() {
+
     var listFragment = ListFragment
+
     override  fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme) // Branded launch
         super.onCreate(savedInstanceState)

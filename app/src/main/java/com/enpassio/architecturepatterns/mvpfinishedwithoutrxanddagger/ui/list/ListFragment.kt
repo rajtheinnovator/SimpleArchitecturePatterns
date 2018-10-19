@@ -76,8 +76,7 @@ class ListFragment : Fragment(), ListContract.ListView, SearchView.OnQueryTextLi
 
         val isTabletLayout = DisplayMetricsUtil.isScreenW(SCREEN_TABLET_DP_WIDTH)
         mCharactersRecycler!!.layoutManager = setUpLayoutManager(isTabletLayout)
-        mCharactersRecycler!!.addOnScrollListener(setupScrollListener(isTabletLayout,
-               mCharactersRecycler!!.layoutManager))
+
 
         mSwipeRefreshLayout = view.findViewById(R.id.swipe_to_refresh) as SwipeRefreshLayout
         mSwipeRefreshLayout!!.setProgressBackgroundColorSchemeResource(R.color.colorPrimaryDark)
@@ -119,19 +118,6 @@ class ListFragment : Fragment(), ListContract.ListView, SearchView.OnQueryTextLi
         return gridLayoutManager
     }
 
-    private fun setupScrollListener(isTabletLayout: Boolean,
-                                    layoutManager: RecyclerView.LayoutManager?): EndlessRecyclerViewOnScrollListener {
-        return object : EndlessRecyclerViewOnScrollListener(if (isTabletLayout)
-            (layoutManager as GridLayoutManager?)!!
-        else
-            (layoutManager as LinearLayoutManager?)!!) {
-            override fun onLoadMore(page: Int, totalItemsCount: Int) {
-                if (mListCharacterAdapter!!.addLoadingView()) {
-                    mListPresenter!!.onListEndReached(totalItemsCount, null, mSearchQuery)
-                }
-            }
-        }
-    }
 
     override fun onRefresh() {
         mListCharacterAdapter!!.removeAll()
@@ -151,7 +137,7 @@ class ListFragment : Fragment(), ListContract.ListView, SearchView.OnQueryTextLi
         mListCharacterAdapter!!.addItems(characterList)
     }
 
-   override fun showSearchedCharacters(searchResults: List<CharacterMarvel>) {
+    override fun showSearchedCharacters(searchResults: List<CharacterMarvel>) {
         if (mListCharacterAdapter!!.viewType !== ListAdapter.VIEW_TYPE_LIST) {
             mListCharacterAdapter!!.removeAll()
             mListCharacterAdapter!!.viewType = ListAdapter.VIEW_TYPE_LIST
@@ -163,19 +149,19 @@ class ListFragment : Fragment(), ListContract.ListView, SearchView.OnQueryTextLi
         mListCharacterAdapter!!.addItems(searchResults)
     }
 
-   override fun showProgress() {
+    override fun showProgress() {
         if (mListCharacterAdapter!!.isEmpty && !mSwipeRefreshLayout!!.isRefreshing) {
             mContentLoadingProgress!!.visibility = View.VISIBLE
         }
     }
 
-   override fun hideProgress() {
+    override fun hideProgress() {
         mSwipeRefreshLayout!!.isRefreshing = false
         mContentLoadingProgress!!.visibility = View.GONE
         mListCharacterAdapter!!.removeLoadingView()
     }
 
-   override fun showUnauthorizedError() {
+    override fun showUnauthorizedError() {
         mMessageImage!!.setImageResource(R.drawable.ic_error_list)
         mMessageText!!.text = getString(R.string.error_generic_server_error, "Unauthorized")
         mMessageButton!!.text = getString(R.string.action_try_again)
