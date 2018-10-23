@@ -2,26 +2,21 @@ package com.enpassio.architecturepatterns.mvpfinishedwithoutrxanddagger.ui.list
 
 import android.os.Build
 import android.os.Bundle
-import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
-import android.support.v4.view.MenuItemCompat
-import android.support.v4.view.ViewCompat
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.*
 import android.text.TextUtils
 import android.transition.Slide
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.enpassio.architecturepatterns.R
 import com.enpassio.architecturepatterns.mvpfinishedwithoutrxanddagger.util.DisplayMetricsUtil
-import com.example.android.core.data.DataManager
-import com.example.android.core.data.model.CharacterMarvel
-import com.example.android.core.ui.list.ListContract
-import com.example.android.core.ui.list.ListPresenter
 
 /**
  * Created by Greta Grigutė on 2018-10-17.
