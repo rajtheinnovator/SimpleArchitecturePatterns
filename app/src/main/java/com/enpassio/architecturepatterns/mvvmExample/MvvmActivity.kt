@@ -2,8 +2,8 @@ package com.enpassio.architecturepatterns.mvvmExample
 
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil.setContentView
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import com.enpassio.architecturepatterns.R
 import com.enpassio.architecturepatterns.databinding.MvvmPatternActivityBinding
 

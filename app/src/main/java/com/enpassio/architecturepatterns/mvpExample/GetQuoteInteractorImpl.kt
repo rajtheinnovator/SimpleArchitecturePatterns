@@ -5,9 +5,7 @@ package com.enpassio.architecturepatterns.mvpExample
  */
 
 import android.os.Handler
-
-import java.util.Arrays
-import java.util.Random
+import java.util.*
 
 class GetQuoteInteractorImpl : MainContract.GetQuoteInteractor {
 

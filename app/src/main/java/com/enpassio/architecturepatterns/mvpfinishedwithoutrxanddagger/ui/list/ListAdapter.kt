@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.enpassio.architecturepatterns.R
-import com.enpassio.core.data.model.CharacterMarvel
+import com.example.android.core.data.model.CharacterMarvel
 import com.squareup.picasso.Picasso
 import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
@@ -86,7 +86,7 @@ class ListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     private fun onBindGenericItemViewHolder(holder: CharacterViewHolder, position: Int) {
-        holder.name.setText(mCharacterList[position].name)
+        holder.name.text = mCharacterList[position].name
 
         val characterImageUrl = mCharacterList[position].imageUrl
         if (!TextUtils.isEmpty(characterImageUrl)) {
