@@ -6,5 +6,4 @@
     <string name="mvvm_example">MVVM Example</string>
     <string name="mvp_finished_example">Finished MVP example</string>
     <string name="transaction_header">transactionHeader</string>
-    <string name="mvvm_example_journaldev">MVVM Example Journaldev</string>
 </resources>

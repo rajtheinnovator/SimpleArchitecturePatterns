@@ -17,10 +17,6 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import com.enpassio.architecturepatterns.R
 import com.enpassio.architecturepatterns.mvpfinishedwithoutrxanddagger.util.DisplayMetricsUtil
-import com.enpassio.core.data.DataManager
-import com.enpassio.core.data.model.CharacterMarvel
-import com.enpassio.core.ui.list.ListContract
-import com.enpassio.core.ui.list.ListPresenter
 
 /**
  * Created by Greta Grigutė on 2018-10-17.

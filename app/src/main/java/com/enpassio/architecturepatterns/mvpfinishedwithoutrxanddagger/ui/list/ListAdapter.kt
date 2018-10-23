@@ -11,7 +11,6 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.enpassio.architecturepatterns.R
-import com.enpassio.core.data.model.CharacterMarvel
 import com.squareup.picasso.Picasso
 import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
