@@ -1,7 +1,7 @@
 package com.example.android.core.ui.list
 
 import android.text.TextUtils
-import com.example.android.core.data.DataManager
+import com.enpassio.core.data.DataManager
 import com.example.android.core.data.model.CharacterMarvel
 import com.example.android.core.data.model.DataWrapper
 import com.example.android.core.data.network.RemoteCallback

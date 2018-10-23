@@ -2,6 +2,8 @@ package com.example.android.core.data.model
 
 import android.os.Parcel
 import android.os.Parcelable
+import com.enpassio.core.data.model.Image
+import com.enpassio.core.data.model.Url
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 import java.util.*

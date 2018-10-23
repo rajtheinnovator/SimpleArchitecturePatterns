@@ -24,3 +24,10 @@ core/src/main/res/drawable/
 gradle.properties
 hs_err_pid4004.log
 replay_pid4004.log
+core/src/main/java/com/example/android/core/AvengingApplication.kt
+core/src/main/java/com/example/android/core/data/model/CharacterComicWrapper.kt
+core/src/main/java/com/example/android/core/data/model/DataContainer.kt
+core/src/main/java/com/example/android/core/data/model/DataWrapper.kt
+core/src/main/java/com/example/android/core/data/network/RemoteCallback.kt
+core/src/main/java/com/example/android/core/ui/base/
+core/src/main/java/com/example/android/core/ui/character/

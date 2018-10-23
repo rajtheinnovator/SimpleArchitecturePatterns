@@ -1,12 +1,12 @@
 package com.enpassio.core.data
 
 import android.util.Log
-import com.enpassio.core.BuildConfig
-import com.enpassio.core.data.model.CharacterMarvel
-import com.enpassio.core.data.model.DataWrapper
-import com.enpassio.core.data.network.MarvelService
 import com.enpassio.core.data.network.MarvelServiceFactory
-import com.enpassio.core.data.network.RemoteCallback
+import com.example.android.core.BuildConfig
+import com.example.android.core.data.model.CharacterMarvel
+import com.example.android.core.data.model.DataWrapper
+import com.example.android.core.data.network.MarvelService
+import com.example.android.core.data.network.RemoteCallback
 import java.math.BigInteger
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
