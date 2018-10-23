@@ -14,24 +14,24 @@ import com.example.android.core.ui.base.BasePresenter
 class ListPresenter(private val mDataManager: DataManager) : BasePresenter<ListContract.ListView>(), ListContract.ViewActions {
 
     override fun onInitialListRequested() {
-        getCharacters(ITEM_REQUEST_INITIAL_OFFSET, ITEM_REQUEST_LIMIT, null)
+        getCharacters(ITEM_REQUEST_INITIAL_OFFSET, ITEM_REQUEST_LIMIT, "hulk")
     }
 
-   override fun onListEndReached(offset: Int?, limit: Int?, searchQuery: String?) {
-        getCharacters(offset!!, limit ?: ITEM_REQUEST_LIMIT, searchQuery!!)
+//   override fun onListEndReached(offset: Int?, limit: Int?, searchQuery: String?) {
+//        getCharacters(offset!!, limit ?: ITEM_REQUEST_LIMIT, searchQuery!!)
+//    }
+
+    override  fun onCharacterSearched(searchQuery: String) {
+        getCharacters(ITEM_REQUEST_INITIAL_OFFSET, ITEM_REQUEST_LIMIT, searchQuery)
     }
 
-  override  fun onCharacterSearched(searchQuery: String?) {
-        getCharacters(ITEM_REQUEST_INITIAL_OFFSET, ITEM_REQUEST_LIMIT, searchQuery!!)
-    }
-
-    private fun getCharacters(offset: Int, limit: Int, searchQuery: String?) {
+    private fun getCharacters(offset: Int, limit: Int, searchQuery: String) {
         if (!isViewAttached()) return
         mView!!.showMessageLayout(false)
         mView!!.showProgress()
-        mDataManager.getCharactersList(offset, limit, searchQuery!!,
+        mDataManager.getCharactersList(offset, limit, searchQuery,
                 object : RemoteCallback<DataWrapper<List<CharacterMarvel>>>() {
-                  override fun onSuccess(response: DataWrapper<List<CharacterMarvel>>) {
+                    override fun onSuccess(response: DataWrapper<List<CharacterMarvel>>) {
                         if (!isViewAttached()) return
                         mView!!.hideProgress()
                         val responseResults = response.data!!.results!!
@@ -40,20 +40,19 @@ class ListPresenter(private val mDataManager: DataManager) : BasePresenter<ListC
                             return
                         }
 
-                        if (TextUtils.isEmpty(searchQuery)) {
-                            mView!!.showCharacters(responseResults)
+                        if (TextUtils.isEmpty(searchQuery)) { mView!!.showCharacters(responseResults)
                         } else {
                             mView!!.showSearchedCharacters(responseResults)
                         }
                     }
 
-                 override fun onUnauthorized() {
+                    override fun onUnauthorized() {
                         if (!isViewAttached()) return
                         mView!!.hideProgress()
                         mView!!.showUnauthorizedError()
                     }
 
-                  override fun onFailed(throwable: Throwable) {
+                    override fun onFailed(throwable: Throwable) {
                         if (!isViewAttached()) return
                         mView!!.hideProgress()
                         mView!!.showError(throwable.message!!)

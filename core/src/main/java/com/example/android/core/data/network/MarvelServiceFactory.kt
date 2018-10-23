@@ -1,6 +1,6 @@
 package com.example.android.core.data.network
 
-import com.example.android.core.BuildConfig
+import com.squareup.leakcanary.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

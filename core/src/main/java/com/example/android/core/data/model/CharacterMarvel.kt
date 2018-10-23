@@ -4,11 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
-import java.util.ArrayList
-
-/**
- * Created by Greta Grigutė on 2018-10-17.
- */
+import java.util.*
 
 /**
  * Model for Marvel character
@@ -85,7 +81,7 @@ class CharacterMarvel : Parcelable {
     }
 
     companion object {
-@JvmField
+        @JvmField
         val CREATOR: Parcelable.Creator<CharacterMarvel> = object : Parcelable.Creator<CharacterMarvel> {
             override fun createFromParcel(source: Parcel): CharacterMarvel {
                 return CharacterMarvel(source)

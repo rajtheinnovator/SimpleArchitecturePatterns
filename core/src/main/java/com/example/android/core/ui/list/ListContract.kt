@@ -11,9 +11,9 @@ interface ListContract {
     interface ViewActions {
         fun onInitialListRequested()
 
-        fun onListEndReached(offset: Int?, limit: Int?, searchQuery: String?)
+       // fun onListEndReached(offset: Int, limit: Int, searchQuery: String)
 
-        fun onCharacterSearched(searchQuery: String?)
+        fun onCharacterSearched(searchQuery: String)
     }
 
     interface ListView : RemoteView {

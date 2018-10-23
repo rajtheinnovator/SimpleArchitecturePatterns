@@ -1,17 +1,12 @@
 package com.example.android.core.data
 
-import android.support.annotation.StringDef
 import android.util.Log
 import com.example.android.core.BuildConfig
 import com.example.android.core.data.model.CharacterMarvel
-import com.example.android.core.data.model.Comic
 import com.example.android.core.data.model.DataWrapper
 import com.example.android.core.data.network.MarvelService
 import com.example.android.core.data.network.MarvelServiceFactory
 import com.example.android.core.data.network.RemoteCallback
-import retrofit2.Call
-import java.lang.annotation.Retention
-import java.lang.annotation.RetentionPolicy
 import java.math.BigInteger
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
@@ -51,19 +46,19 @@ class DataManager private constructor() {
     private annotation class Type
 
     fun getComics(characterId: Long, offset: Int?, limit: Int?, listener: RemoteCallback<DataWrapper<List<Comic>>>) {
-        getComicListByType(characterId, COMIC_TYPE_COMICS, offset, limit).enqueue(listener)
+    getComicListByType(characterId, COMIC_TYPE_COMICS, offset, limit).enqueue(listener)
     }
 
     fun getSeries(characterId: Long, offset: Int?, limit: Int?, listener: RemoteCallback<DataWrapper<List<Comic>>>) {
-        getComicListByType(characterId, COMIC_TYPE_SERIES, offset, limit).enqueue(listener)
+    getComicListByType(characterId, COMIC_TYPE_SERIES, offset, limit).enqueue(listener)
     }
 
     fun getStories(characterId: Long, offset: Int?, limit: Int?, listener: RemoteCallback<DataWrapper<List<Comic>>>) {
-        getComicListByType(characterId, COMIC_TYPE_STORIES, offset, limit).enqueue(listener)
+    getComicListByType(characterId, COMIC_TYPE_STORIES, offset, limit).enqueue(listener)
     }
 
     fun getEvents(characterId: Long, offset: Int?, limit: Int?, listener: RemoteCallback<DataWrapper<List<Comic>>>) {
-        getComicListByType(characterId, COMIC_TYPE_EVENTS, offset, limit).enqueue(listener)
+    getComicListByType(characterId, COMIC_TYPE_EVENTS, offset, limit).enqueue(listener)
     }
 
     /**
@@ -71,14 +66,14 @@ class DataManager private constructor() {
      *
      * @param id        [CharacterMarvel] Id
      * @param comicType Which [.Type] list should be requested
-     */
+    */
     private fun getComicListByType(id: Long, @Type comicType: String,
-                                   offset: Int?, limit: Int?): Call<DataWrapper<List<Comic>>> {
-        val timeStamp = System.currentTimeMillis()
-        return mMarvelService.getCharacterComics(id, comicType, offset, limit, BuildConfig.PUBLIC_KEY,
-                buildMd5AuthParameter(timeStamp), timeStamp)
+    offset: Int?, limit: Int?): Call<DataWrapper<List<Comic>>> {
+    val timeStamp = System.currentTimeMillis()
+    return mMarvelService.getCharacterComics(id, comicType, offset, limit, BuildConfig.PUBLIC_KEY,
+    buildMd5AuthParameter(timeStamp), timeStamp)
     }
-**/
+     **/
     companion object {
 
         private var sInstance: DataManager? = null
@@ -92,10 +87,10 @@ class DataManager private constructor() {
             }
 
 
-  //      private const val COMIC_TYPE_COMICS = "comics"
-  //      private const val COMIC_TYPE_SERIES = "series"
-  //      private const val COMIC_TYPE_STORIES = "stories"
-  //      private const val COMIC_TYPE_EVENTS = "events"
+        //      private const val COMIC_TYPE_COMICS = "comics"
+        //      private const val COMIC_TYPE_SERIES = "series"
+        //      private const val COMIC_TYPE_STORIES = "stories"
+        //      private const val COMIC_TYPE_EVENTS = "events"
 
         /**
          * Builds the required API "hash" parameter (timeStamp + privateKey + publicKey)

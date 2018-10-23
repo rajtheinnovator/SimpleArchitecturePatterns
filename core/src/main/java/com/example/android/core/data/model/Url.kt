@@ -17,6 +17,7 @@ class Url : Parcelable {
     @JsonProperty("url")
     var url: String? = null
 
+    constructor() {}
 
     override fun describeContents(): Int {
         return 0
@@ -33,7 +34,8 @@ class Url : Parcelable {
     }
 
     companion object {
-@JvmField
+
+        @JvmField
         val CREATOR: Parcelable.Creator<Url> = object : Parcelable.Creator<Url> {
             override fun createFromParcel(source: Parcel): Url {
                 return Url(source)
