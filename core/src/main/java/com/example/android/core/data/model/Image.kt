@@ -17,7 +17,7 @@ class Image : Parcelable {
     @JsonProperty(value = "extension")
     var extension: String? = null
 
-    constructor() {}
+    constructor()
 
     fun buildCompleteImagePath(): String {
         return "$path.$extension"

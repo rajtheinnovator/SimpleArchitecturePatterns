@@ -19,7 +19,7 @@ class ListActivity : BaseActivity() {
         setContentView(R.layout.mvp_finished_without_rx_and_dagger_activity)
         if (savedInstanceState == null) {
 
-            getSupportFragmentManager()
+            supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.list_container, listFragment.newInstance())
                     .commit()

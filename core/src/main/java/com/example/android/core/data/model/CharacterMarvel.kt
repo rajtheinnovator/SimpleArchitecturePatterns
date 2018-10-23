@@ -42,7 +42,7 @@ class CharacterMarvel : Parcelable {
     val imageUrl: String
         get() = thumbnail!!.buildCompleteImagePath()
 
-    constructor() {}
+    constructor()
 
     override fun toString(): String {
         return name!!
@@ -75,9 +75,9 @@ class CharacterMarvel : Parcelable {
         id = `in`.readLong()
         name = `in`.readString()
         description = `in`.readString()
-        thumbnail = `in`.readParcelable<Image>(Image::class.java!!.getClassLoader())
+        thumbnail = `in`.readParcelable<Image>(Image::class.java.classLoader)
         urls = ArrayList<Url>()
-        `in`.readList(urls, Url::class.java!!.getClassLoader())
+        `in`.readList(urls, Url::class.java.classLoader)
     }
 
     companion object {

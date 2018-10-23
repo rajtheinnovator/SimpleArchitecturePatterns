@@ -17,7 +17,7 @@ class Url : Parcelable {
     @JsonProperty("url")
     var url: String? = null
 
-    constructor() {}
+    constructor()
 
     override fun describeContents(): Int {
         return 0

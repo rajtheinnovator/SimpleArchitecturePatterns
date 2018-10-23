@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
-import java.util.ArrayList
+import java.util.*
 
 /**
  * Created by Greta Grigutė on 2018-10-17.
@@ -57,9 +57,9 @@ class Comic: Parcelable {
    return results
   }
 
- constructor() {}
+    constructor()
 
- fun getImageUrl(index:Int):String {
+    fun getImageUrl(index: Int): String {
   return if (imageList != null && imageList!!.size >= index) {
    imageList!!.get(index).buildCompleteImagePath()
   } else ""
@@ -78,7 +78,7 @@ class Comic: Parcelable {
   return if (id != null)
    id == comic!!.id
   else
-   comic!!.id == null && if (type != null) type == comic!!.type else comic!!.type == null
+      comic!!.id == null && if (type != null) type == comic.type else comic.type == null
 
  }
 
@@ -100,7 +100,7 @@ class Comic: Parcelable {
   this.id = `in`.readValue(Int::class.java.classLoader) as Int
   this.title = `in`.readString()
   this.resourceUri = `in`.readString()
-  this.thumbnail = `in`.readParcelable<Image>(Image::class.java!!.getClassLoader())
+     this.thumbnail = `in`.readParcelable<Image>(Image::class.java.classLoader)
   this.imageList = `in`.createTypedArrayList(Image.CREATOR)
  }
 
