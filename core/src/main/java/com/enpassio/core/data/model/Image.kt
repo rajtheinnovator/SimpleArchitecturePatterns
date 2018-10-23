@@ -17,6 +17,8 @@ class Image : Parcelable {
     @JsonProperty(value = "extension")
     var extension: String? = null
 
+    constructor() {}
+
     fun buildCompleteImagePath(): String {
         return "$path.$extension"
     }
@@ -36,7 +38,8 @@ class Image : Parcelable {
     }
 
     companion object {
-@JvmField
+
+        @JvmField
         val CREATOR: Parcelable.Creator<Image> = object : Parcelable.Creator<Image> {
             override fun createFromParcel(source: Parcel): Image {
                 return Image(source)

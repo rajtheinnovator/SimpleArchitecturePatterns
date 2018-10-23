@@ -20,9 +20,9 @@ interface MarvelService {
     fun getCharacters(@Query("apikey") publicKey: String,
                       @Query("hash") md5Digest: String,
                       @Query("ts") timestamp: Long,
-                      @Query("offset") offset: Int?,
-                      @Query("limit") limit: Int?,
-                      @Query("nameStartsWith") searchQuery: String?): Call<DataWrapper<List<CharacterMarvel>>>
+                      @Query("offset") offset: Int,
+                      @Query("limit") limit: Int,
+                      @Query("nameStartsWith") searchQuery: String): Call<DataWrapper<List<CharacterMarvel>>>
 
     /**
      * Retrieve character by given Id
@@ -39,8 +39,8 @@ interface MarvelService {
     @GET("characters/{characterId}/{comicType}")
     fun getCharacterComics(@Path("characterId") characterId: Long,
                            @Path("comicType") comicType: String,
-                           @Query("offset") offset: Int?,
-                           @Query("limit") limit: Int?,
+                           @Query("offset") offset: Int,
+                           @Query("limit") limit: Int,
                            @Query("apikey") publicKey: String,
                            @Query("hash") md5Digest: String,
                            @Query("ts") timestamp: Long): Call<DataWrapper<List<Comic>>>

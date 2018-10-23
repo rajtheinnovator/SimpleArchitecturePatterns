@@ -1,5 +1,6 @@
 package com.enpassio.core.data.network
 
+import com.enpassio.core.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

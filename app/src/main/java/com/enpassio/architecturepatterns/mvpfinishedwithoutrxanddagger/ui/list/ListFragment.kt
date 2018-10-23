@@ -2,9 +2,7 @@ package com.enpassio.architecturepatterns.mvpfinishedwithoutrxanddagger.ui.list
 
 import android.os.Build
 import android.os.Bundle
-import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
-import android.support.v4.view.ViewCompat
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.*
@@ -76,8 +74,8 @@ class ListFragment : Fragment(), ListContract.ListView, SearchView.OnQueryTextLi
 
         val isTabletLayout = DisplayMetricsUtil.isScreenW(SCREEN_TABLET_DP_WIDTH)
         mCharactersRecycler!!.layoutManager = setUpLayoutManager(isTabletLayout)
-        mCharactersRecycler!!.addOnScrollListener(setupScrollListener(isTabletLayout,
-               mCharactersRecycler!!.layoutManager))
+        //  mCharactersRecycler!!.addOnScrollListener(setupScrollListener(isTabletLayout,
+        //         mCharactersRecycler!!.layoutManager))
 
         mSwipeRefreshLayout = view.findViewById(R.id.swipe_to_refresh) as SwipeRefreshLayout
         mSwipeRefreshLayout!!.setProgressBackgroundColorSchemeResource(R.color.colorPrimaryDark)
@@ -119,19 +117,19 @@ class ListFragment : Fragment(), ListContract.ListView, SearchView.OnQueryTextLi
         return gridLayoutManager
     }
 
-    private fun setupScrollListener(isTabletLayout: Boolean,
-                                    layoutManager: RecyclerView.LayoutManager?): EndlessRecyclerViewOnScrollListener {
-        return object : EndlessRecyclerViewOnScrollListener(if (isTabletLayout)
-            (layoutManager as GridLayoutManager?)!!
-        else
-            (layoutManager as LinearLayoutManager?)!!) {
-            override fun onLoadMore(page: Int, totalItemsCount: Int) {
-                if (mListCharacterAdapter!!.addLoadingView()) {
-                    mListPresenter!!.onListEndReached(totalItemsCount, null, mSearchQuery)
-                }
-            }
-        }
-    }
+//    private fun setupScrollListener(isTabletLayout: Boolean,
+//                                    layoutManager: RecyclerView.LayoutManager?): EndlessRecyclerViewOnScrollListener {
+//        return object : EndlessRecyclerViewOnScrollListener(if (isTabletLayout)
+//            (layoutManager as GridLayoutManager?)!!
+//        else
+//            (layoutManager as LinearLayoutManager?)!!) {
+//            override fun onLoadMore(page: Int, totalItemsCount: Int) {
+//                if (mListCharacterAdapter!!.addLoadingView()) {
+//                    mListPresenter!!.onListEndReached(totalItemsCount, null, mSearchQuery)
+//                }
+//            }
+//        }
+//    }
 
     override fun onRefresh() {
         mListCharacterAdapter!!.removeAll()
@@ -202,10 +200,10 @@ class ListFragment : Fragment(), ListContract.ListView, SearchView.OnQueryTextLi
     }
 
 
-    private fun makeTransitionBundle(sharedElementView: View): Bundle? {
-        return ActivityOptionsCompat.makeSceneTransitionAnimation(mActivity!!,
-                sharedElementView, ViewCompat.getTransitionName(sharedElementView)!!).toBundle()
-    }
+//    private fun makeTransitionBundle(sharedElementView: View): Bundle? {
+//        return ActivityOptionsCompat.makeSceneTransitionAnimation(mActivity!!,
+//                sharedElementView, ViewCompat.getTransitionName(sharedElementView)!!).toBundle()
+//    }
 
 
     override fun onQueryTextSubmit(query: String): Boolean {
@@ -215,7 +213,7 @@ class ListFragment : Fragment(), ListContract.ListView, SearchView.OnQueryTextLi
     override fun onQueryTextChange(queryText: String): Boolean {
         mSearchQuery = queryText
         if (!TextUtils.isEmpty(mSearchQuery)) {
-            mListPresenter!!.onCharacterSearched(mSearchQuery)
+            mListPresenter!!.onCharacterSearched(mSearchQuery!!)
             return true
         }
         return false
