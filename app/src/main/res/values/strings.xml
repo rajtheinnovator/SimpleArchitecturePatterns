@@ -16,4 +16,5 @@
     <string name="action_try_again">Try Again</string>
     <string name="action_check_again">Check Again</string>
     <string name="action_search">Search…</string>
+    <string name="complete_data_binding">Complete Databinding sample</string>
 </resources>

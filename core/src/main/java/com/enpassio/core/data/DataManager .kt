@@ -2,13 +2,13 @@ package com.enpassio.core.data
 
 import android.support.annotation.StringDef
 import android.util.Log
-import com.enpassio.core.BuildConfig
 import com.enpassio.core.data.model.CharacterMarvel
 import com.enpassio.core.data.model.Comic
 import com.enpassio.core.data.model.DataWrapper
 import com.enpassio.core.data.network.MarvelService
 import com.enpassio.core.data.network.MarvelServiceFactory
 import com.enpassio.core.data.network.RemoteCallback
+import com.example.android.core.BuildConfig
 import retrofit2.Call
 import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy

@@ -30,6 +30,7 @@
         <activity
             android:name=".mvpfinishedwithoutrxanddagger.MvpFinishedWithoutRxAndDaggerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".completedatabindingsample.CompleteDatabindingSampleActivity" />
     </application>
 
 </manifest>

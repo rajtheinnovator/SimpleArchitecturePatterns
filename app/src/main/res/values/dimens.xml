@@ -10,4 +10,5 @@
     <dimen name="item_list_image_width">@dimen/item_list_height</dimen>
     <dimen name="item_list_image_margin">20dp</dimen>
     <dimen name="item_gallery_height">200dp</dimen>
+    <dimen name="button_margin">30dp</dimen>
 </resources>
