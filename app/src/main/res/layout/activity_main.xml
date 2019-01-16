@@ -50,4 +50,15 @@
         android:text="@string/mvp_finished_example"
         android:textAllCaps="false"
         android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/button_complete_data_binding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@null"
+        android:padding="8dp"
+        android:text="@string/complete_data_binding"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
 </LinearLayout>

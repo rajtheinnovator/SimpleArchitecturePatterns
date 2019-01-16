@@ -3,6 +3,7 @@ package com.enpassio.architecturepatterns
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.enpassio.architecturepatterns.completedatabindingsample.CompleteDatabindingSampleActivity
 import com.enpassio.architecturepatterns.mvpExample.MvpPatternActivity
 import com.enpassio.architecturepatterns.mvpfinishedwithoutrxanddagger.MvpFinishedWithoutRxAndDaggerActivity
 import com.enpassio.architecturepatterns.mvpwithoutrxanddagger.view.MvpWithoutRxAndDaggerActivity
@@ -18,6 +19,11 @@ class MainActivity : AppCompatActivity() {
         button_mvp_without_rx_and_dagger.setOnClickListener { startMvpWithoutRxDaggerActivity() }
         button_mvvm.setOnClickListener { startMvvmActivity() }
         button_mvp_finished.setOnClickListener { startMvpFinishedWithoutRxDaggerActivity() }
+        button_complete_data_binding.setOnClickListener{startCompleteDatabindingSampleActivity()}
+    }
+
+    private fun startCompleteDatabindingSampleActivity() {
+        startActivity(Intent(this@MainActivity, CompleteDatabindingSampleActivity::class.java))
     }
 
     private fun startMvpFinishedWithoutRxDaggerActivity() {
