@@ -6,5 +6,14 @@
     <string name="mvvm_example">MVVM Example</string>
     <string name="mvp_finished_example">Finished MVP example</string>
     <string name="transaction_header">transactionHeader</string>
-    <string name="complete_data_binding">Complete Databinding sample</string>
+    <!-- Errors -->
+    <string name="error_no_char_info_to_display">No Character info to display</string>
+    <string name="error_no_items_to_display">No items to display</string>
+    <string name="error_no_network">No networking connection!</string>
+    <string name="error_generic_server_error">There was na error contacting the server, %1$s</string>
+
+    <string name="action_acknowledge">Acknowledge</string>
+    <string name="action_try_again">Try Again</string>
+    <string name="action_check_again">Check Again</string>
+    <string name="action_search">Search…</string>
 </resources>
